@@ -36,7 +36,7 @@
 
 - Downloading Language Models
   <p align="left">
-   🤗 <a href="https://huggingface.co/FreedomIntelligence/LongLLaVAMed-9B" target="_blank">Jamba-9B-Instruct</a> 
+   🤗 <a href="https://huggingface.co/FreedomIntelligence/LongLLaVAMed-9B" target="_blank">LongLLaVAMed-9B</a> 
   </p>
 
 - 
