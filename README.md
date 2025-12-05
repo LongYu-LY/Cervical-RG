@@ -33,6 +33,8 @@
 ### 1. Environment Setup
 
   ```bash
+  conda create -n Cervical python=3.11
+  conda activate Cervical
   pip install -r requirements.txt
   ```
 
