@@ -15,8 +15,8 @@
 <details>
   <summary>Click to view the architecture image</summary>
 
-  ![Architecture Image](./assets/architecture.pdf)
-  ![Decode Image](./assets/decoder1.pdf)
+  ![Architecture Image](./assets/architecture.png)
+  ![Decode Image](./assets/decoder.png)
 
 </details>
 
