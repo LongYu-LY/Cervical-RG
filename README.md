@@ -1,7 +1,14 @@
 
+
+
 <p align="center">
-   📃 <a href="https://papers.miccai.org/miccai-2025/paper/0177_paper.pdf" target="_blank">Paper</a> • 🌐 <a href="" target="_blank"></a> 
+     <h1>[MICCAI2025] Cervical-RG: Automated Cervical Cancer Report Generation from 3D Multi-sequence MRI via CoT-guided Hierarchical Experts</h1>
+<p align="center">
+   📃 <a href="https://papers.miccai.org/miccai-2025/paper/0177_paper.pdf" target="blank">Paper</a> • 🌐 <a href="" target="blank"></a>
 </p>
+<!-- <p align="center">
+   📃 <a href="https://papers.miccai.org/miccai-2025/paper/0177_paper.pdf" target="_blank">Paper</a> • 🌐 <a href="" target="_blank"></a> 
+</p> -->
 
 
 ## 🌈 Update
