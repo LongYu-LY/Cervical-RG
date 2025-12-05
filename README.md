@@ -63,14 +63,7 @@ python Cervical-RG/llava/eval/model_vqa.py
 ## Citation
 
 ```
-@misc{wang2024longllavascalingmultimodalllms,
-      title={LongLLaVA: Scaling Multi-modal LLMs to 1000 Images Efficiently via Hybrid Architecture}, 
-      author={Xidong Wang and Dingjie Song and Shunian Chen and Chen Zhang and Benyou Wang},
-      year={2024},
-      eprint={2409.02889},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2409.02889}, 
+@misc{
       @InProceedings{ZhaHan_CervicalRG_MICCAI2025,
         author = { Zhang, Hanwen AND Long, Yu AND Fan, Yimeng AND Wang, Yu AND Zhan, Zhaoyi AND Wang, Sen AND Jiang, Yuncheng AND Sun, Rui AND Xing, Zheng AND Li, Zhen AND Duan, Xiaohui AND Zhao, Weibing},
         title = { { Cervical-RG: Automated Cervical Cancer Report Generation from 3D Multi-sequence MRI via CoT-guided Hierarchical Experts } },
@@ -80,6 +73,6 @@ python Cervical-RG/llava/eval/model_vqa.py
         volume = {LNCS 15964},
         month = {September},
         page = {78 -- 88}
-    }
+    },
 }
 ```
