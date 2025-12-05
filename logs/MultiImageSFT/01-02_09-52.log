@@ -1,0 +1,175 @@
+[2025-01-02 09:52:29,059] [INFO] [real_accelerator.py:203:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+/home/ly/anaconda3/envs/LongLLaVA3.10/lib/python3.10/site-packages/deepspeed/runtime/zero/linear.py:49: FutureWarning: `torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.
+  def forward(ctx, input, weight, bias=None):
+/home/ly/anaconda3/envs/LongLLaVA3.10/lib/python3.10/site-packages/deepspeed/runtime/zero/linear.py:67: FutureWarning: `torch.cuda.amp.custom_bwd(args...)` is deprecated. Please use `torch.amp.custom_bwd(args..., device_type='cuda')` instead.
+  def backward(ctx, grad_output):
+[93m [WARNING] [0m async_io requires the dev libaio .so object and headers but these were not found.
+[93m [WARNING] [0m async_io: please install the libaio-dev package with apt
+[93m [WARNING] [0m If libaio is already installed (perhaps from source), try setting the CFLAGS and LDFLAGS environment variables to where it can be found.
+[93m [WARNING] [0m Please specify the CUTLASS repo directory as environment variable $CUTLASS_PATH
+[93m [WARNING] [0m sparse_attn requires a torch version >= 1.5 and < 2.0 but detected 2.4
+[93m [WARNING] [0m using untested triton version (3.0.0), only 1.0.0 is known to be compatible
+[2025-01-02 09:52:30,492] [WARNING] [runner.py:202:fetch_hostfile] Unable to find hostfile, will proceed with training with local resources only.
+[2025-01-02 09:52:30,492] [INFO] [runner.py:568:main] cmd = /home/ly/anaconda3/envs/LongLLaVA3.10/bin/python -u -m deepspeed.launcher.launch --world_info=eyJsb2NhbGhvc3QiOiBbMCwgMSwgMiwgMywgNCwgNSwgNiwgN119 --master_addr=127.0.0.1 --master_port=29500 --enable_each_rank_log=None llava/train/train_mem.py --deepspeed ./scripts/zero3.json --model_name_or_path ./ckpts/SingleImageSFT --version jamba --data_path ./data/431VQA40960_144.json --vision_tower ./models/clip_vit_large_patch14_336 --mm_projector_type mlp2x_gelu --resamplePooling 2d --group_by_modality_length True --mm_vision_select_layer -2 --mm_use_im_start_end False --mm_use_im_patch_token False --image_aspect_ratio pad --bf16 True --output_dir ./ckpts/MultiImageSFT --num_train_epochs 1 --per_device_train_batch_size 1 --per_device_eval_batch_size 1 --gradient_accumulation_steps 1 --evaluation_strategy no --save_strategy steps --save_steps 400 --save_total_limit 1 --learning_rate 1e-5 --weight_decay 0. --warmup_ratio 0.03 --lr_scheduler_type cosine --logging_steps 1 --tf32 True --model_max_length 40960 --gradient_checkpointing True --dataloader_num_workers 8 --lazy_preprocess True --report_to wandb
+[2025-01-02 09:52:31,746] [INFO] [real_accelerator.py:203:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[93m [WARNING] [0m async_io requires the dev libaio .so object and headers but these were not found.
+[93m [WARNING] [0m async_io: please install the libaio-dev package with apt
+[93m [WARNING] [0m If libaio is already installed (perhaps from source), try setting the CFLAGS and LDFLAGS environment variables to where it can be found.
+[93m [WARNING] [0m Please specify the CUTLASS repo directory as environment variable $CUTLASS_PATH
+[93m [WARNING] [0m sparse_attn requires a torch version >= 1.5 and < 2.0 but detected 2.4
+[93m [WARNING] [0m using untested triton version (3.0.0), only 1.0.0 is known to be compatible
+/home/ly/anaconda3/envs/LongLLaVA3.10/lib/python3.10/site-packages/deepspeed/runtime/zero/linear.py:49: FutureWarning: `torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.
+  def forward(ctx, input, weight, bias=None):
+/home/ly/anaconda3/envs/LongLLaVA3.10/lib/python3.10/site-packages/deepspeed/runtime/zero/linear.py:67: FutureWarning: `torch.cuda.amp.custom_bwd(args...)` is deprecated. Please use `torch.amp.custom_bwd(args..., device_type='cuda')` instead.
+  def backward(ctx, grad_output):
+[2025-01-02 09:52:33,166] [INFO] [launch.py:139:main] 0 NCCL_ALGO=Tree
+[2025-01-02 09:52:33,166] [INFO] [launch.py:146:main] WORLD INFO DICT: {'localhost': [0, 1, 2, 3, 4, 5, 6, 7]}
+[2025-01-02 09:52:33,166] [INFO] [launch.py:152:main] nnodes=1, num_local_procs=8, node_rank=0
+[2025-01-02 09:52:33,166] [INFO] [launch.py:163:main] global_rank_mapping=defaultdict(<class 'list'>, {'localhost': [0, 1, 2, 3, 4, 5, 6, 7]})
+[2025-01-02 09:52:33,166] [INFO] [launch.py:164:main] dist_world_size=8
+[2025-01-02 09:52:33,166] [INFO] [launch.py:168:main] Setting CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7
+[2025-01-02 09:52:33,167] [INFO] [launch.py:256:main] process 1008898 spawned with command: ['/home/ly/anaconda3/envs/LongLLaVA3.10/bin/python', '-u', 'llava/train/train_mem.py', '--local_rank=0', '--deepspeed', './scripts/zero3.json', '--model_name_or_path', './ckpts/SingleImageSFT', '--version', 'jamba', '--data_path', './data/431VQA40960_144.json', '--vision_tower', './models/clip_vit_large_patch14_336', '--mm_projector_type', 'mlp2x_gelu', '--resamplePooling', '2d', '--group_by_modality_length', 'True', '--mm_vision_select_layer', '-2', '--mm_use_im_start_end', 'False', '--mm_use_im_patch_token', 'False', '--image_aspect_ratio', 'pad', '--bf16', 'True', '--output_dir', './ckpts/MultiImageSFT', '--num_train_epochs', '1', '--per_device_train_batch_size', '1', '--per_device_eval_batch_size', '1', '--gradient_accumulation_steps', '1', '--evaluation_strategy', 'no', '--save_strategy', 'steps', '--save_steps', '400', '--save_total_limit', '1', '--learning_rate', '1e-5', '--weight_decay', '0.', '--warmup_ratio', '0.03', '--lr_scheduler_type', 'cosine', '--logging_steps', '1', '--tf32', 'True', '--model_max_length', '40960', '--gradient_checkpointing', 'True', '--dataloader_num_workers', '8', '--lazy_preprocess', 'True', '--report_to', 'wandb']
+[2025-01-02 09:52:33,168] [INFO] [launch.py:256:main] process 1008899 spawned with command: ['/home/ly/anaconda3/envs/LongLLaVA3.10/bin/python', '-u', 'llava/train/train_mem.py', '--local_rank=1', '--deepspeed', './scripts/zero3.json', '--model_name_or_path', './ckpts/SingleImageSFT', '--version', 'jamba', '--data_path', './data/431VQA40960_144.json', '--vision_tower', './models/clip_vit_large_patch14_336', '--mm_projector_type', 'mlp2x_gelu', '--resamplePooling', '2d', '--group_by_modality_length', 'True', '--mm_vision_select_layer', '-2', '--mm_use_im_start_end', 'False', '--mm_use_im_patch_token', 'False', '--image_aspect_ratio', 'pad', '--bf16', 'True', '--output_dir', './ckpts/MultiImageSFT', '--num_train_epochs', '1', '--per_device_train_batch_size', '1', '--per_device_eval_batch_size', '1', '--gradient_accumulation_steps', '1', '--evaluation_strategy', 'no', '--save_strategy', 'steps', '--save_steps', '400', '--save_total_limit', '1', '--learning_rate', '1e-5', '--weight_decay', '0.', '--warmup_ratio', '0.03', '--lr_scheduler_type', 'cosine', '--logging_steps', '1', '--tf32', 'True', '--model_max_length', '40960', '--gradient_checkpointing', 'True', '--dataloader_num_workers', '8', '--lazy_preprocess', 'True', '--report_to', 'wandb']
+[2025-01-02 09:52:33,169] [INFO] [launch.py:256:main] process 1008900 spawned with command: ['/home/ly/anaconda3/envs/LongLLaVA3.10/bin/python', '-u', 'llava/train/train_mem.py', '--local_rank=2', '--deepspeed', './scripts/zero3.json', '--model_name_or_path', './ckpts/SingleImageSFT', '--version', 'jamba', '--data_path', './data/431VQA40960_144.json', '--vision_tower', './models/clip_vit_large_patch14_336', '--mm_projector_type', 'mlp2x_gelu', '--resamplePooling', '2d', '--group_by_modality_length', 'True', '--mm_vision_select_layer', '-2', '--mm_use_im_start_end', 'False', '--mm_use_im_patch_token', 'False', '--image_aspect_ratio', 'pad', '--bf16', 'True', '--output_dir', './ckpts/MultiImageSFT', '--num_train_epochs', '1', '--per_device_train_batch_size', '1', '--per_device_eval_batch_size', '1', '--gradient_accumulation_steps', '1', '--evaluation_strategy', 'no', '--save_strategy', 'steps', '--save_steps', '400', '--save_total_limit', '1', '--learning_rate', '1e-5', '--weight_decay', '0.', '--warmup_ratio', '0.03', '--lr_scheduler_type', 'cosine', '--logging_steps', '1', '--tf32', 'True', '--model_max_length', '40960', '--gradient_checkpointing', 'True', '--dataloader_num_workers', '8', '--lazy_preprocess', 'True', '--report_to', 'wandb']
+[2025-01-02 09:52:33,169] [INFO] [launch.py:256:main] process 1008901 spawned with command: ['/home/ly/anaconda3/envs/LongLLaVA3.10/bin/python', '-u', 'llava/train/train_mem.py', '--local_rank=3', '--deepspeed', './scripts/zero3.json', '--model_name_or_path', './ckpts/SingleImageSFT', '--version', 'jamba', '--data_path', './data/431VQA40960_144.json', '--vision_tower', './models/clip_vit_large_patch14_336', '--mm_projector_type', 'mlp2x_gelu', '--resamplePooling', '2d', '--group_by_modality_length', 'True', '--mm_vision_select_layer', '-2', '--mm_use_im_start_end', 'False', '--mm_use_im_patch_token', 'False', '--image_aspect_ratio', 'pad', '--bf16', 'True', '--output_dir', './ckpts/MultiImageSFT', '--num_train_epochs', '1', '--per_device_train_batch_size', '1', '--per_device_eval_batch_size', '1', '--gradient_accumulation_steps', '1', '--evaluation_strategy', 'no', '--save_strategy', 'steps', '--save_steps', '400', '--save_total_limit', '1', '--learning_rate', '1e-5', '--weight_decay', '0.', '--warmup_ratio', '0.03', '--lr_scheduler_type', 'cosine', '--logging_steps', '1', '--tf32', 'True', '--model_max_length', '40960', '--gradient_checkpointing', 'True', '--dataloader_num_workers', '8', '--lazy_preprocess', 'True', '--report_to', 'wandb']
+[2025-01-02 09:52:33,170] [INFO] [launch.py:256:main] process 1008902 spawned with command: ['/home/ly/anaconda3/envs/LongLLaVA3.10/bin/python', '-u', 'llava/train/train_mem.py', '--local_rank=4', '--deepspeed', './scripts/zero3.json', '--model_name_or_path', './ckpts/SingleImageSFT', '--version', 'jamba', '--data_path', './data/431VQA40960_144.json', '--vision_tower', './models/clip_vit_large_patch14_336', '--mm_projector_type', 'mlp2x_gelu', '--resamplePooling', '2d', '--group_by_modality_length', 'True', '--mm_vision_select_layer', '-2', '--mm_use_im_start_end', 'False', '--mm_use_im_patch_token', 'False', '--image_aspect_ratio', 'pad', '--bf16', 'True', '--output_dir', './ckpts/MultiImageSFT', '--num_train_epochs', '1', '--per_device_train_batch_size', '1', '--per_device_eval_batch_size', '1', '--gradient_accumulation_steps', '1', '--evaluation_strategy', 'no', '--save_strategy', 'steps', '--save_steps', '400', '--save_total_limit', '1', '--learning_rate', '1e-5', '--weight_decay', '0.', '--warmup_ratio', '0.03', '--lr_scheduler_type', 'cosine', '--logging_steps', '1', '--tf32', 'True', '--model_max_length', '40960', '--gradient_checkpointing', 'True', '--dataloader_num_workers', '8', '--lazy_preprocess', 'True', '--report_to', 'wandb']
+[2025-01-02 09:52:33,171] [INFO] [launch.py:256:main] process 1008903 spawned with command: ['/home/ly/anaconda3/envs/LongLLaVA3.10/bin/python', '-u', 'llava/train/train_mem.py', '--local_rank=5', '--deepspeed', './scripts/zero3.json', '--model_name_or_path', './ckpts/SingleImageSFT', '--version', 'jamba', '--data_path', './data/431VQA40960_144.json', '--vision_tower', './models/clip_vit_large_patch14_336', '--mm_projector_type', 'mlp2x_gelu', '--resamplePooling', '2d', '--group_by_modality_length', 'True', '--mm_vision_select_layer', '-2', '--mm_use_im_start_end', 'False', '--mm_use_im_patch_token', 'False', '--image_aspect_ratio', 'pad', '--bf16', 'True', '--output_dir', './ckpts/MultiImageSFT', '--num_train_epochs', '1', '--per_device_train_batch_size', '1', '--per_device_eval_batch_size', '1', '--gradient_accumulation_steps', '1', '--evaluation_strategy', 'no', '--save_strategy', 'steps', '--save_steps', '400', '--save_total_limit', '1', '--learning_rate', '1e-5', '--weight_decay', '0.', '--warmup_ratio', '0.03', '--lr_scheduler_type', 'cosine', '--logging_steps', '1', '--tf32', 'True', '--model_max_length', '40960', '--gradient_checkpointing', 'True', '--dataloader_num_workers', '8', '--lazy_preprocess', 'True', '--report_to', 'wandb']
+[2025-01-02 09:52:33,172] [INFO] [launch.py:256:main] process 1008904 spawned with command: ['/home/ly/anaconda3/envs/LongLLaVA3.10/bin/python', '-u', 'llava/train/train_mem.py', '--local_rank=6', '--deepspeed', './scripts/zero3.json', '--model_name_or_path', './ckpts/SingleImageSFT', '--version', 'jamba', '--data_path', './data/431VQA40960_144.json', '--vision_tower', './models/clip_vit_large_patch14_336', '--mm_projector_type', 'mlp2x_gelu', '--resamplePooling', '2d', '--group_by_modality_length', 'True', '--mm_vision_select_layer', '-2', '--mm_use_im_start_end', 'False', '--mm_use_im_patch_token', 'False', '--image_aspect_ratio', 'pad', '--bf16', 'True', '--output_dir', './ckpts/MultiImageSFT', '--num_train_epochs', '1', '--per_device_train_batch_size', '1', '--per_device_eval_batch_size', '1', '--gradient_accumulation_steps', '1', '--evaluation_strategy', 'no', '--save_strategy', 'steps', '--save_steps', '400', '--save_total_limit', '1', '--learning_rate', '1e-5', '--weight_decay', '0.', '--warmup_ratio', '0.03', '--lr_scheduler_type', 'cosine', '--logging_steps', '1', '--tf32', 'True', '--model_max_length', '40960', '--gradient_checkpointing', 'True', '--dataloader_num_workers', '8', '--lazy_preprocess', 'True', '--report_to', 'wandb']
+[2025-01-02 09:52:33,173] [INFO] [launch.py:256:main] process 1008905 spawned with command: ['/home/ly/anaconda3/envs/LongLLaVA3.10/bin/python', '-u', 'llava/train/train_mem.py', '--local_rank=7', '--deepspeed', './scripts/zero3.json', '--model_name_or_path', './ckpts/SingleImageSFT', '--version', 'jamba', '--data_path', './data/431VQA40960_144.json', '--vision_tower', './models/clip_vit_large_patch14_336', '--mm_projector_type', 'mlp2x_gelu', '--resamplePooling', '2d', '--group_by_modality_length', 'True', '--mm_vision_select_layer', '-2', '--mm_use_im_start_end', 'False', '--mm_use_im_patch_token', 'False', '--image_aspect_ratio', 'pad', '--bf16', 'True', '--output_dir', './ckpts/MultiImageSFT', '--num_train_epochs', '1', '--per_device_train_batch_size', '1', '--per_device_eval_batch_size', '1', '--gradient_accumulation_steps', '1', '--evaluation_strategy', 'no', '--save_strategy', 'steps', '--save_steps', '400', '--save_total_limit', '1', '--learning_rate', '1e-5', '--weight_decay', '0.', '--warmup_ratio', '0.03', '--lr_scheduler_type', 'cosine', '--logging_steps', '1', '--tf32', 'True', '--model_max_length', '40960', '--gradient_checkpointing', 'True', '--dataloader_num_workers', '8', '--lazy_preprocess', 'True', '--report_to', 'wandb']
+Traceback (most recent call last):
+  File "/home/ly/LLMs/LongLLaVA-3D/llava/train/train_mem.py", line 2, in <module>
+    from llava.train.train import train
+  File "/home/ly/LLMs/LongLLaVA-3D/llava/__init__.py", line 1, in <module>
+    from .model import LlavaJambaForCausalLM
+  File "/home/ly/LLMs/LongLLaVA-3D/llava/model/__init__.py", line 1, in <module>
+    from .language_model.llava_llama import LlavaLlamaForCausalLM, LlavaConfig
+  File "/home/ly/LLMs/LongLLaVA-3D/llava/model/language_model/llava_llama.py", line 13, in <module>
+    from ..llava_arch import LlavaMetaModel, LlavaMetaForCausalLM
+  File "/home/ly/LLMs/LongLLaVA-3D/llava/model/llava_arch.py", line 22, in <module>
+    from .multimodal_encoder.builder import build_vision_tower
+  File "/home/ly/LLMs/LongLLaVA-3D/llava/model/multimodal_encoder/builder.py", line 1, in <module>
+    from .vit import ViT3DTower
+  File "/home/ly/LLMs/LongLLaVA-3D/llava/model/multimodal_encoder/vit.py", line 19, in <module>
+    from monai.networks.blocks.patchembedding import PatchEmbeddingBlock
+ModuleNotFoundError: No module named 'monai'
+Traceback (most recent call last):
+  File "/home/ly/LLMs/LongLLaVA-3D/llava/train/train_mem.py", line 2, in <module>
+Traceback (most recent call last):
+  File "/home/ly/LLMs/LongLLaVA-3D/llava/train/train_mem.py", line 2, in <module>
+    from llava.train.train import train
+  File "/home/ly/LLMs/LongLLaVA-3D/llava/__init__.py", line 1, in <module>
+    from .model import LlavaJambaForCausalLM
+  File "/home/ly/LLMs/LongLLaVA-3D/llava/model/__init__.py", line 1, in <module>
+    from llava.train.train import train
+  File "/home/ly/LLMs/LongLLaVA-3D/llava/__init__.py", line 1, in <module>
+    from .language_model.llava_llama import LlavaLlamaForCausalLM, LlavaConfig
+  File "/home/ly/LLMs/LongLLaVA-3D/llava/model/language_model/llava_llama.py", line 13, in <module>
+    from .model import LlavaJambaForCausalLM
+  File "/home/ly/LLMs/LongLLaVA-3D/llava/model/__init__.py", line 1, in <module>
+    from ..llava_arch import LlavaMetaModel, LlavaMetaForCausalLM
+  File "/home/ly/LLMs/LongLLaVA-3D/llava/model/llava_arch.py", line 22, in <module>
+    from .language_model.llava_llama import LlavaLlamaForCausalLM, LlavaConfig
+  File "/home/ly/LLMs/LongLLaVA-3D/llava/model/language_model/llava_llama.py", line 13, in <module>
+        from .multimodal_encoder.builder import build_vision_towerfrom ..llava_arch import LlavaMetaModel, LlavaMetaForCausalLM
+
+  File "/home/ly/LLMs/LongLLaVA-3D/llava/model/multimodal_encoder/builder.py", line 1, in <module>
+  File "/home/ly/LLMs/LongLLaVA-3D/llava/model/llava_arch.py", line 22, in <module>
+    from .vit import ViT3DTower
+  File "/home/ly/LLMs/LongLLaVA-3D/llava/model/multimodal_encoder/vit.py", line 19, in <module>
+    from .multimodal_encoder.builder import build_vision_tower
+  File "/home/ly/LLMs/LongLLaVA-3D/llava/model/multimodal_encoder/builder.py", line 1, in <module>
+    from monai.networks.blocks.patchembedding import PatchEmbeddingBlock
+    from .vit import ViT3DTower
+  File "/home/ly/LLMs/LongLLaVA-3D/llava/model/multimodal_encoder/vit.py", line 19, in <module>
+ModuleNotFoundError: No module named 'monai'
+    from monai.networks.blocks.patchembedding import PatchEmbeddingBlock
+ModuleNotFoundError: No module named 'monai'
+Traceback (most recent call last):
+  File "/home/ly/LLMs/LongLLaVA-3D/llava/train/train_mem.py", line 2, in <module>
+    from llava.train.train import train
+  File "/home/ly/LLMs/LongLLaVA-3D/llava/__init__.py", line 1, in <module>
+    from .model import LlavaJambaForCausalLM
+  File "/home/ly/LLMs/LongLLaVA-3D/llava/model/__init__.py", line 1, in <module>
+    from .language_model.llava_llama import LlavaLlamaForCausalLM, LlavaConfig
+  File "/home/ly/LLMs/LongLLaVA-3D/llava/model/language_model/llava_llama.py", line 13, in <module>
+    from ..llava_arch import LlavaMetaModel, LlavaMetaForCausalLM
+  File "/home/ly/LLMs/LongLLaVA-3D/llava/model/llava_arch.py", line 22, in <module>
+    from .multimodal_encoder.builder import build_vision_tower
+  File "/home/ly/LLMs/LongLLaVA-3D/llava/model/multimodal_encoder/builder.py", line 1, in <module>
+    from .vit import ViT3DTower
+  File "/home/ly/LLMs/LongLLaVA-3D/llava/model/multimodal_encoder/vit.py", line 19, in <module>
+    from monai.networks.blocks.patchembedding import PatchEmbeddingBlock
+ModuleNotFoundError: No module named 'monai'
+Traceback (most recent call last):
+  File "/home/ly/LLMs/LongLLaVA-3D/llava/train/train_mem.py", line 2, in <module>
+    from llava.train.train import train
+  File "/home/ly/LLMs/LongLLaVA-3D/llava/__init__.py", line 1, in <module>
+    from .model import LlavaJambaForCausalLM
+  File "/home/ly/LLMs/LongLLaVA-3D/llava/model/__init__.py", line 1, in <module>
+    from .language_model.llava_llama import LlavaLlamaForCausalLM, LlavaConfig
+  File "/home/ly/LLMs/LongLLaVA-3D/llava/model/language_model/llava_llama.py", line 13, in <module>
+    from ..llava_arch import LlavaMetaModel, LlavaMetaForCausalLM
+  File "/home/ly/LLMs/LongLLaVA-3D/llava/model/llava_arch.py", line 22, in <module>
+    from .multimodal_encoder.builder import build_vision_tower
+  File "/home/ly/LLMs/LongLLaVA-3D/llava/model/multimodal_encoder/builder.py", line 1, in <module>
+    from .vit import ViT3DTower
+  File "/home/ly/LLMs/LongLLaVA-3D/llava/model/multimodal_encoder/vit.py", line 19, in <module>
+    from monai.networks.blocks.patchembedding import PatchEmbeddingBlock
+ModuleNotFoundError: No module named 'monai'
+Traceback (most recent call last):
+  File "/home/ly/LLMs/LongLLaVA-3D/llava/train/train_mem.py", line 2, in <module>
+    from llava.train.train import train
+  File "/home/ly/LLMs/LongLLaVA-3D/llava/__init__.py", line 1, in <module>
+    from .model import LlavaJambaForCausalLM
+  File "/home/ly/LLMs/LongLLaVA-3D/llava/model/__init__.py", line 1, in <module>
+    from .language_model.llava_llama import LlavaLlamaForCausalLM, LlavaConfig
+  File "/home/ly/LLMs/LongLLaVA-3D/llava/model/language_model/llava_llama.py", line 13, in <module>
+    from ..llava_arch import LlavaMetaModel, LlavaMetaForCausalLM
+  File "/home/ly/LLMs/LongLLaVA-3D/llava/model/llava_arch.py", line 22, in <module>
+    from .multimodal_encoder.builder import build_vision_tower
+  File "/home/ly/LLMs/LongLLaVA-3D/llava/model/multimodal_encoder/builder.py", line 1, in <module>
+    from .vit import ViT3DTower
+  File "/home/ly/LLMs/LongLLaVA-3D/llava/model/multimodal_encoder/vit.py", line 19, in <module>
+    from monai.networks.blocks.patchembedding import PatchEmbeddingBlock
+ModuleNotFoundError: No module named 'monai'
+Traceback (most recent call last):
+  File "/home/ly/LLMs/LongLLaVA-3D/llava/train/train_mem.py", line 2, in <module>
+    from llava.train.train import train
+  File "/home/ly/LLMs/LongLLaVA-3D/llava/__init__.py", line 1, in <module>
+    from .model import LlavaJambaForCausalLM
+  File "/home/ly/LLMs/LongLLaVA-3D/llava/model/__init__.py", line 1, in <module>
+    from .language_model.llava_llama import LlavaLlamaForCausalLM, LlavaConfig
+  File "/home/ly/LLMs/LongLLaVA-3D/llava/model/language_model/llava_llama.py", line 13, in <module>
+    from ..llava_arch import LlavaMetaModel, LlavaMetaForCausalLM
+  File "/home/ly/LLMs/LongLLaVA-3D/llava/model/llava_arch.py", line 22, in <module>
+    from .multimodal_encoder.builder import build_vision_tower
+  File "/home/ly/LLMs/LongLLaVA-3D/llava/model/multimodal_encoder/builder.py", line 1, in <module>
+    from .vit import ViT3DTower
+  File "/home/ly/LLMs/LongLLaVA-3D/llava/model/multimodal_encoder/vit.py", line 19, in <module>
+    from monai.networks.blocks.patchembedding import PatchEmbeddingBlock
+ModuleNotFoundError: No module named 'monai'
+Traceback (most recent call last):
+  File "/home/ly/LLMs/LongLLaVA-3D/llava/train/train_mem.py", line 2, in <module>
+    from llava.train.train import train
+  File "/home/ly/LLMs/LongLLaVA-3D/llava/__init__.py", line 1, in <module>
+    from .model import LlavaJambaForCausalLM
+  File "/home/ly/LLMs/LongLLaVA-3D/llava/model/__init__.py", line 1, in <module>
+    from .language_model.llava_llama import LlavaLlamaForCausalLM, LlavaConfig
+  File "/home/ly/LLMs/LongLLaVA-3D/llava/model/language_model/llava_llama.py", line 13, in <module>
+    from ..llava_arch import LlavaMetaModel, LlavaMetaForCausalLM
+  File "/home/ly/LLMs/LongLLaVA-3D/llava/model/llava_arch.py", line 22, in <module>
+    from .multimodal_encoder.builder import build_vision_tower
+  File "/home/ly/LLMs/LongLLaVA-3D/llava/model/multimodal_encoder/builder.py", line 1, in <module>
+    from .vit import ViT3DTower
+  File "/home/ly/LLMs/LongLLaVA-3D/llava/model/multimodal_encoder/vit.py", line 19, in <module>
+    from monai.networks.blocks.patchembedding import PatchEmbeddingBlock
+ModuleNotFoundError: No module named 'monai'
+[2025-01-02 09:52:36,176] [INFO] [launch.py:319:sigkill_handler] Killing subprocess 1008898
+[2025-01-02 09:52:36,202] [INFO] [launch.py:319:sigkill_handler] Killing subprocess 1008899
+[2025-01-02 09:52:36,226] [INFO] [launch.py:319:sigkill_handler] Killing subprocess 1008900
+[2025-01-02 09:52:36,247] [INFO] [launch.py:319:sigkill_handler] Killing subprocess 1008901
+[2025-01-02 09:52:36,264] [INFO] [launch.py:319:sigkill_handler] Killing subprocess 1008902
+[2025-01-02 09:52:36,281] [INFO] [launch.py:319:sigkill_handler] Killing subprocess 1008903
+[2025-01-02 09:52:36,281] [INFO] [launch.py:319:sigkill_handler] Killing subprocess 1008904
+[2025-01-02 09:52:36,298] [INFO] [launch.py:319:sigkill_handler] Killing subprocess 1008905
+[2025-01-02 09:52:36,315] [ERROR] [launch.py:325:sigkill_handler] ['/home/ly/anaconda3/envs/LongLLaVA3.10/bin/python', '-u', 'llava/train/train_mem.py', '--local_rank=7', '--deepspeed', './scripts/zero3.json', '--model_name_or_path', './ckpts/SingleImageSFT', '--version', 'jamba', '--data_path', './data/431VQA40960_144.json', '--vision_tower', './models/clip_vit_large_patch14_336', '--mm_projector_type', 'mlp2x_gelu', '--resamplePooling', '2d', '--group_by_modality_length', 'True', '--mm_vision_select_layer', '-2', '--mm_use_im_start_end', 'False', '--mm_use_im_patch_token', 'False', '--image_aspect_ratio', 'pad', '--bf16', 'True', '--output_dir', './ckpts/MultiImageSFT', '--num_train_epochs', '1', '--per_device_train_batch_size', '1', '--per_device_eval_batch_size', '1', '--gradient_accumulation_steps', '1', '--evaluation_strategy', 'no', '--save_strategy', 'steps', '--save_steps', '400', '--save_total_limit', '1', '--learning_rate', '1e-5', '--weight_decay', '0.', '--warmup_ratio', '0.03', '--lr_scheduler_type', 'cosine', '--logging_steps', '1', '--tf32', 'True', '--model_max_length', '40960', '--gradient_checkpointing', 'True', '--dataloader_num_workers', '8', '--lazy_preprocess', 'True', '--report_to', 'wandb'] exits with return code = 1
