@@ -36,9 +36,6 @@
   pip install -r requirements.txt
   ```
 
-- Dataset DownLoading and Construction
-  > Coming Soon.
-
 ### 2. Training
 
 - Downloading Language Models
@@ -51,7 +48,7 @@
   bash 3DImageSFT.sh
   ```
 
-### 4. Evaluation
+### 3. Evaluation
 
 - Command Line Interface
 
@@ -59,9 +56,6 @@
 python Cervical-RG/llava/eval/model_vqa.py
 ```
 
-## TO DO
-
-- [ ] Release Data Construction Code
 
 ## Acknowledgement
 
