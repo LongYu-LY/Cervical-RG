@@ -45,7 +45,8 @@
    🤗 <a href="https://huggingface.co/FreedomIntelligence/LongLLaVAMed-9B" target="_blank">LongLLaVAMed-9B</a> 
   <p align="left">
    💾 <a href="https://pan.baidu.com/s/1yegg0IizNTWTGCWgOLPyDg?pwd=vppb" target="_blank">Cervical-RG Model and required installation packages</a> 
-     
+   <p align="left">
+   💾 <a href="https://pan.baidu.com/s/1Ck5QUBdNrBMLQU-m1DXApw?pwd=s9yj" target="_blank">Required installation packages</a>     
   </p>
 
 - 
