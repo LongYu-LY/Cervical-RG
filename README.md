@@ -43,6 +43,9 @@
 - Downloading Language Models
   <p align="left">
    🤗 <a href="https://huggingface.co/FreedomIntelligence/LongLLaVAMed-9B" target="_blank">LongLLaVAMed-9B</a> 
+🤗 <a href="https://huggingface.co/FreedomIntelligence/LongLLaVAMed-9B" target="_blank">LongLLaVAMed-9B</a>  
+💾 <a href="[https://pan.baidu.com/s/1aHqsrLy7l7ySjgO9nbv43w?pwd=itm6]" target="_blank">Cervical-RG Model and required installation packages</a> 
+     
   </p>
 
 - 
